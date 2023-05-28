@@ -97,4 +97,15 @@ public class UltimateQATest extends PageSetup {
 
         // Java stream od wersji 8
     }
+
+    @Test
+    public void testSix() {
+        WebElement buttonUsingXpath1 = driver.findElementByXPath("//span[text()='XPath tutorial for automation testers']" +
+                "/ancestor::h4/following-sibling::div//button");
+        buttonUsingXpath1.click();
+
+        WebElement buttonSuccessText = driver.findElementByClassName("entry-title");
+        // overloading
+        assertEquals("Button success", buttonSuccessText.getText());
+    }
 }
